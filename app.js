@@ -24,7 +24,8 @@ class Products {
   async getProducts() {
     try {
       const contentful = await client.getEntries({
-        content_type: 'comfyHouse'
+        content_type: 'comfyHouse',
+        order: 'fields.price'
       });
 
       const products = contentful.items.map(item => {
